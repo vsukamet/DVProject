@@ -1,0 +1,107 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="./css/index.css">
+      <meta charset="UTF-8">
+      <title>Data Vizualization Project</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script src="http://d3js.org/d3.v4.min.js"></script>
+      <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <div class="container">
+         <!--<nav class="navbar navbar-dark bg-dark">-->
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Medical Encyclopedia</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item">
+                     <a  href="#" id="symptomLink" value="symptom">Symptom</a>
+                  </li>
+                  <li class="nav-item">
+                     <a  id="diseaseLink" value="disease" href="#">Disease</a>
+                  </li>
+                  <li class="nav-item">
+                     <a  id= "topicLink" value="topic"href="#">Topic</a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col make-center">
+               <br>
+               <br>
+               <div>
+                  <input class="form-control my-0 py-1 " id="autocomplete" type="text"
+                     placeholder="Search Symptom" aria-label="Search">
+               </div>
+               <br>
+               <div id="bubble-container" style="border: 1px solid white;"></div>
+               <!--<div id="bubbler" class="modal centered">-->
+               <!--<div class="content">-->
+               <!--<svg class="newSvg" >-->
+               <!--</svg>-->
+               <!--<span class="close">X</span>-->
+               <!--</div>-->
+               <!--</div>-->
+               <script type="text/javascript" src="js/bubble.js"></script>
+               <script src="js/barGraph.js"></script>
+               <script src="js/line.js"></script>
+            </div>
+            <div class="col" >
+               <div class="heading disease-heading">Symptom - Disease Relation</div>
+               <div class="row" style="height:35%; border: 1px solid white;">
+                  <div class="col-md-3" >
+                     <svg class="disease-network"></svg>
+                  </div>
+                  <!--<div class="col-md-3" style="width:50%">-->
+                  <!--<svg class="symptom-network"></svg>-->
+                  <!--</div>-->
+               </div>
+               <div class="heading symptom-heading">Symptom - Symptom Relation</div>
+               <div class="row" style="height:35%; border: 1px solid white;">
+                  <div class="col-md-3" >
+                     <svg class="symptom-network"></svg>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="popup-overlay">
+         <div id="close">X</div>
+         <div id = "popup">
+            <div id="popUpWindow">
+               <div class="row symptoms" style="width: auto; border: 1px solid black;">
+                  <div class="" >
+                     <svg id="lineChart"></svg>
+                  </div>
+               </div>
+               <div class="row drugs" style="width: auto; border: 1px solid black;">
+                  <div class="" >
+                     <svg id="drug-barChart"></svg>
+                  </div>
+               </div>
+               <div class="row diseases" style="width: auto; border: 1px solid black;" >
+                  <div class="" >
+                     <svg id="disease-barChart"></svg>
+                  </div>
+               </div>
+               <div class="row symptoms" style="width: auto; border: 1px solid black;">
+                  <div class="" >
+                     <svg id="symptom-barChart"></svg>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
